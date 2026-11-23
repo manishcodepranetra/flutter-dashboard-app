@@ -1,135 +1,158 @@
 # Flutter Dashboard App
 
-A beautiful and responsive Flutter dashboard application designed to display and manage tasks with an intuitive user interface.
+A simple and responsive Flutter Dashboard application built using Flutter and Dart.
 
-## 📋 Features
+The application provides task management functionality with status filtering, dynamic task creation, and pull-to-refresh support.
 
-- **Task Management Dashboard** - View all tasks at a glance with a clean, organized layout
-- **Task Status Tracking** - Track tasks with different statuses (Active, Pending, Done)
-- **Responsive Design** - Works seamlessly across mobile, tablet, and web platforms
-- **Material Design** - Built with Flutter's Material Design components for a polished look
-- **Simple & Intuitive UI** - User-friendly interface with clear visual hierarchy
+## Features
 
-## 📱 Project Structure
+### 1. Dashboard UI
 
+- Clean and modern dashboard interface.
+- App bar with menu icon and profile avatar.
+- Greeting section.
+- Task cards with rounded corners and shadows.
+- Bottom navigation bar.
+
+### 2. Add New Tasks
+
+- Click the Refresh button to add a new task.
+- Task titles increment automatically (Task 4, Task 5, Task 6, etc.).
+- Subtitles increment automatically (Subtitle 4, Subtitle 5, Subtitle 6, etc.).
+- Each new task receives a randomly selected status:
+  - Active
+  - Pending
+  - Done
+
+### 3. Status Filter
+
+Users can filter tasks using the following options:
+
+- All: Displays all available tasks.
+- Active: Displays only active tasks.
+- Pending: Displays only pending tasks.
+- Done: Displays only completed tasks.
+
+An empty-state message, "No tasks available", is displayed when no tasks match the selected filter.
+
+### 4. Pull to Refresh
+
+- Pull down on the task list to reset the dashboard.
+- Removes all dynamically added tasks.
+- Restores the initial three tasks.
+- Resets task numbering to Task 4.
+- Resets the selected filter to All.
+
+### 5. Task Status Colors
+
+| Status  | Color |
+| ------- | ----- |
+| Active  | Green |
+| Pending | Blue  |
+| Done    | Grey  |
+
+## Project Structure
+
+```text
+flutter-dashboard-app/
+│
+├── android/
+├── ios/
+├── lib/
+│   │
+│   ├── main.dart
+│   │
+│   ├── models/
+│   │   └── task_model.dart
+│   │
+│   ├── screens/
+│   │   └── dashboard_screen.dart
+│   │
+│   └── widgets/
+│       └── dashboard_card.dart
+│
+├── test/
+├── pubspec.yaml
+└── README.md
 ```
-lib/
-├── main.dart                 # Application entry point
-├── models/
-│   └── task_model.dart       # Task data model
-├── screens/
-│   └── dashboard_screen.dart # Main dashboard screen
-└── widgets/
-    └── dashboard_card.dart   # Reusable task card widget
+
+## Technologies Used
+
+- Flutter
+- Dart
+- Material Design
+
+## Requirements
+
+Before running the project, make sure you have:
+
+- Flutter SDK installed.
+- Dart SDK installed (included with Flutter).
+- Visual Studio Code or Android Studio.
+- Android emulator or physical Android device.
+- Git installed.
+
+## Installation and Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/techquriousclick/flutter-dashboard-app.git
 ```
 
-## 🛠️ Prerequisites
+### 2. Navigate to Project Directory
 
-- Flutter SDK (version 3.0.0 or higher)
-- Dart SDK (included with Flutter)
-- Android Studio / Xcode / VS Code with Flutter extensions
-- An emulator or physical device for testing
+```bash
+cd flutter-dashboard-app
+```
 
-## 🚀 Getting Started
-
-### 1. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 flutter pub get
 ```
 
-### 2. Run the App
+### 4. Check Flutter Configuration
+
+```bash
+flutter doctor
+```
+
+### 5. Check Connected Devices
+
+```bash
+flutter devices
+```
+
+### 6. Run the Application
 
 ```bash
 flutter run
 ```
 
-For specific platforms:
-```bash
-flutter run -d ios      # Run on iOS
-flutter run -d android  # Run on Android
-flutter run -d web      # Run on Web
-flutter run -d windows  # Run on Windows
-flutter run -d macos    # Run on macOS
-flutter run -d linux    # Run on Linux
-```
+## Application Workflow
 
-## 🏗️ Build
+1. Launch the application to view the initial dashboard.
+2. Use the status filters to view specific tasks.
+3. Click the Refresh button to add new tasks.
+4. Each new task receives an incrementing title and subtitle.
+5. Pull down on the task list to remove dynamically added tasks and restore the initial three tasks.
 
-### Build for Production
+## Code Organization
 
-```bash
-# Android
-flutter build apk
-flutter build appbundle
+- **Models:** Defines the task data structure.
+- **Screens:** Contains the dashboard screen and its state management.
+- **Widgets:** Contains reusable UI components such as task cards.
+- **Main:** Initializes the Flutter application.
 
-# iOS
-flutter build ios
+## Future Improvements
 
-# Web
-flutter build web
+- Connect tasks to a backend API.
+- Add, edit, and delete task functionality.
+- Persist tasks using local storage.
+- Implement functional navigation for all bottom navigation tabs.
+- Add unit and widget tests.
 
-# Windows
-flutter build windows
+## License
 
-# macOS
-flutter build macos
-
-# Linux
-flutter build linux
-```
-
-## 📦 Dependencies
-
-- **Flutter** - UI framework for building beautiful native apps
-- **Material Design** - Google's design system for Flutter
-
-## 🎨 Theming
-
-The app uses a **Deep Purple** primary color scheme. To customize:
-
-Edit `/lib/main.dart`:
-```dart
-theme: ThemeData(
-  primarySwatch: Colors.deepPurple,  // Change this color
-),
-```
-
-## 🏛️ Architecture
-
-### Models
-- **TaskModel** - Represents a task with title, subtitle, and status
-
-### Screens
-- **DashboardScreen** - Main screen displaying a list of tasks
-
-### Widgets
-- **DashboardCard** - Reusable card widget for displaying individual tasks
-
-## 📖 Project Configuration
-
-- **SDK Constraint**: Dart 3.0.0 - 4.0.0
-- **Material Design**: Enabled
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📚 Additional Resources
-
-- [Flutter Documentation](https://docs.flutter.dev/)
-- [Dart Language Tour](https://dart.dev/guides/language/language-tour)
-- [Material Design Guidelines](https://material.io/design)
-- [Flutter Packages](https://pub.dev/)
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
-
-**Happy coding! 🎉**
+This project is intended for learning and demonstration purposes.
